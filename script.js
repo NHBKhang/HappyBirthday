@@ -112,16 +112,19 @@ function openLightbox(src, alt) {
   lightbox.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
 }
+
 function closeLightbox() {
   if (!lightbox) return;
   lightbox.classList.remove("open");
   lightbox.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
 }
+
 $$(".photo-card").forEach(card => card.addEventListener("click", () => {
   const img = $("img", card);
   if (img) openLightbox(img.src, img.alt);
 }));
+
 $("#lightboxClose")?.addEventListener("click", closeLightbox);
 lightbox?.addEventListener("click", e => { if (e.target === lightbox) closeLightbox(); });
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeLightbox(); });
@@ -191,7 +194,7 @@ function burstHearts(x, y, count = 18) {
 const audio = $("#backgroundMusic");
 const musicToggle = $("#musicToggle");
 if (audio && musicToggle) {
-  audio.src = "assets/music/birthday.mp3";
+  audio.src = "assets/music/until-i-found-you.mp3";
   musicToggle.addEventListener("click", async () => {
     if (audio.paused) {
       try {
@@ -200,7 +203,7 @@ if (audio && musicToggle) {
         musicToggle.setAttribute("aria-label", "Tắt nhạc nền");
         musicToggle.title = "Tắt nhạc nền";
       } catch (error) {
-        musicToggle.title = "Hãy thêm file assets/music/birthday.mp3 để bật nhạc.";
+        musicToggle.title = "Lỗi khi bật nhạc";
         musicToggle.classList.remove("playing");
       }
     } else {
