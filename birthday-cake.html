@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080407">
+  <meta name="description" content="Một chiếc bánh sinh nhật và điều ước cuối cùng dành riêng cho Anh Thư.">
+
+  <title>One More Wish, Anh Thư ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="cake.css">
+</head>
+
+<body>
+  <canvas id="cakeCosmos" aria-hidden="true"></canvas>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="glow glow-one" aria-hidden="true"></div>
+  <div class="glow glow-two" aria-hidden="true"></div>
+
+  <main class="birthday-scene">
+
+    <a class="back-link" href="index.html">
+      ← Quay lại câu chuyện
+    </a>
+
+    <div class="intro">
+      <p class="eyebrow">
+        <span>✦</span> THE NIGHT IS STILL YOUNG <span>✦</span>
+      </p>
+
+      <p class="to-you">
+        Dành riêng cho Lương Thị Hoàng Anh Thư
+      </p>
+
+      <div class="birthday-date">
+        <span class="date-line"></span>
+        <span class="date-icon">✦</span>
+        <time datetime="2003-10-23">23 · 10 · 2003</time>
+        <span class="date-icon">✦</span>
+        <span class="date-line"></span>
+      </div>
+
+      <h1>
+        Make a wish,
+        <br>
+        <em>birthday girl.</em>
+      </h1>
+
+      <p class="intro-copy">
+        Món quà cuối cùng dành cho em.
+        <br>
+        Nhắm mắt, rồi ước nhé.
+      </p>
+    </div>
+
+    <!-- BÁNH SINH NHẬT: GIỮ NGUYÊN -->
+
+    <section class="cake-area" aria-label="Bánh kem sinh nhật tương tác">
+
+      <div class="cake-aura"></div>
+
+      <div class="orbit orbit-a"></div>
+      <div class="orbit orbit-b"></div>
+
+      <div class="cake-spark spark-a">✦</div>
+      <div class="cake-spark spark-b">✧</div>
+      <div class="cake-spark spark-c">♡</div>
+
+      <div class="cake" id="birthdayCake" role="img" aria-label="Bánh kem sinh nhật ba tầng màu hồng đỏ">
+        <div class="candles">
+          <button class="candle candle-one" aria-label="Thổi nến thứ nhất">
+            <span class="flame"></span>
+            <i></i>
+          </button>
+
+          <button class="candle candle-two" aria-label="Thổi nến thứ hai">
+            <span class="flame"></span>
+            <i></i>
+          </button>
+
+          <button class="candle candle-three" aria-label="Thổi nến thứ ba">
+            <span class="flame"></span>
+            <i></i>
+          </button>
+        </div>
+
+        <div class="cake-top">
+          <span class="berry berry-one"></span>
+          <span class="berry berry-two"></span>
+          <span class="cream cream-one">✿</span>
+          <span class="cream cream-two">✿</span>
+          <span class="cake-top-heart">♥</span>
+        </div>
+
+        <div class="cake-layer layer-top">
+          <span class="icing-drip drip-one"></span>
+          <span class="icing-drip drip-two"></span>
+          <span class="icing-drip drip-three"></span>
+          <span class="icing-drip drip-four"></span>
+          <div class="cake-piping"></div>
+        </div>
+
+        <div class="cake-layer layer-middle">
+          <div class="middle-ribbon"></div>
+
+          <span class="sugar-dot dot-one"></span>
+          <span class="sugar-dot dot-two"></span>
+          <span class="sugar-dot dot-three"></span>
+          <span class="sugar-dot dot-four"></span>
+        </div>
+
+        <div class="cake-layer layer-bottom">
+          <div class="bottom-ribbon"></div>
+
+          <span class="sugar-heart heart-one">♡</span>
+          <span class="sugar-heart heart-two">♡</span>
+          <span class="sugar-heart heart-three">♡</span>
+        </div>
+
+        <div class="cake-plate">
+          <span>HAPPY BIRTHDAY, ANH THƯ</span>
+        </div>
+      </div>
+
+      <p class="cake-caption" id="cakeCaption">
+        Ba ngọn nến, ba điều ước.
+      </p>
+    </section>
+
+    <!-- NÚT TƯƠNG TÁC -->
+
+    <div class="controls">
+      <button class="wish-action" id="blowButton">
+        Thổi nến & gửi điều ước <span>♡</span>
+      </button>
+
+      <button class="reveal-action" id="revealButton" hidden>
+        Mở lời nhắn cuối cùng ✦
+      </button>
+    </div>
+
+    <p class="hint" id="hintText">
+      Chạm vào nến để thổi tắt.
+    </p>
+
+    <!-- LỜI NHẮN CUỐI CÙNG ĐÃ THAY THẾ -->
+
+    <section class="final-note" id="finalNote" aria-hidden="true">
+      <div class="note-star">✦</div>
+
+      <p class="eyebrow">
+        THE MOST IMPORTANT PART
+      </p>
+
+      <p class="note-recipient">
+        Lương Thị Hoàng Anh Thư
+      </p>
+      
+      <div class="note-birthday">
+        <span class="birthday-symbol">♡</span>
+        <span>THE DAY MY FAVORITE GIRL WAS BORN</span>
+        <strong>23.10.2003</strong>
+      </div>
+
+      <h2>
+        Điều ước cuối cùng
+        <br>
+        <em>của anh là em.</em>
+      </h2>
+
+      <div class="note-divider">
+        <span></span>
+        ♡
+        <span></span>
+      </div>
+
+      <p class="note-message">
+        Nếu có thể xin một điều cho riêng mình, anh không mong
+        điều gì quá lớn lao. Anh chỉ mong em luôn được bình yên,
+        luôn có lý do để mỉm cười, và dù cuộc sống có đưa em đến
+        đâu, em vẫn nhớ rằng có một người thật lòng mong em hạnh phúc.
+      </p>
+
+      <p class="note-message">
+        Cảm ơn em vì đã là em. Sinh nhật vui vẻ nhé, cô gái anh thương.
+        Mong rằng trong rất nhiều sinh nhật sau này, anh vẫn có thể
+        ở đây, nắm tay em và nói câu này một lần nữa.
+      </p>
+
+      <p class="note-sign">
+        Anh thương em. Hôm nay, ngày mai, và những ngày bình thường
+        ở giữa.
+        <span>♥</span>
+      </p>
+
+      <div>
+        <button class="again-button" id="againButton">
+          Thắp nến lại một lần nữa ↻
+        </button>
+        <button class="back-to-top" id="backToTopButton" type="button">
+          ↑ Quay lại đầu trang
+        </button>
+      </div>
+    </section>
+
+    <footer>
+      MADE WITH LOVE <span>♡</span> FOR YOU, ALWAYS
+    </footer>
+
+  </main>
+
+  <script src="cake.js"></script>
+</body>
+
+</html>
